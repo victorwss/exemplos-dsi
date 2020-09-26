@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerar QR Code</title>
+    </head>
+    <body>
+        <form method="POST" action="/qrcode">
+            <label>Texto do QR code</label>
+            <input type="text" name="qr" value="" />
+            <button type="submit">Enviar</button>
+        </form>
+        {{ img | safe}}
+    </body>
+</html>

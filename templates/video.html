@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Embed de vídeos</title>
+    </head>
+    <body>
+        <form method="POST" action="/video">
+            <div>
+                <label>Código do vídeo</label>
+                <input type="text" name="codigo" value="" />
+            </div>
+            <div>
+                <label>Youtube</label>
+                <input type="radio" name="tipo" value="youtube" />
+            </div>
+            <div>
+                <label>Vimeo</label>
+                <input type="radio" name="tipo" value="vimeo" />
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        {{ video | safe}}
+    </body>
+</html>
