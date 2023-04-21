@@ -1,0 +1,16 @@
+{% extends "modelo.html" %}
+{% block titulo %}Planetas visitados{% endblock %}
+{% block titulo2 %}Lista de planetas{% endblock %}
+{% block conteudo %}
+    {% with planetas = get_flashed_messages() %}
+        {% if planetas | length == 0 %}
+            <p>Caro viajante do espaço, a nave ainda não decolou.</p>
+        {% else %}
+            <ul>
+                {% for p in planetas %}
+                    <li>Visitou {{p}}.</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
