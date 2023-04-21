@@ -11,8 +11,8 @@ def index():
 @app.route("/qrcode", methods = ["POST"])
 def new_qr():
     try:
-        input = request.form['qr']
-        code = pyqrcode.create(input)
+        texto = request.form['qr']
+        code = pyqrcode.create(texto)
         image_as_str = code.png_as_base64_str(scale = 5)
         html_img = f'<img src="data:image/png;base64,{image_as_str}">'
         return render_template('qr-code-gen.html', img = html_img)

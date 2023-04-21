@@ -1,4 +1,4 @@
-from flask import Flask, make_response, render_template, redirect, request, session
+from flask import flash, Flask, make_response, render_template, redirect, request, session
 from dataclasses import dataclass
 
 app = Flask(__name__)
@@ -87,7 +87,14 @@ def logout():
     session.pop("usuario_logado", None)
     return render_template("login.html", erro = "Tchau")
 
-#@app.route(
+@app.route("/visitar/<planeta>")
+def visitar_planeta(planeta):
+    flash(planeta)
+    return "OK"
+
+@app.route("/planetas")
+def listar_planetas_visitados_recentemente():
+    return render_template("planetas.html")
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 5000, debug = True)
