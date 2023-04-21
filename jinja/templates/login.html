@@ -1,0 +1,21 @@
+{% extends "modelo.html" %}
+{% block titulo %}Login{% endblock %}
+{% block titulo2 %}Login{% endblock %}
+{% block conteudo %}
+    {% if erro %}
+        <p>{{erro}}</p>
+    {% endif %}
+    <form method="POST" action="/login">
+        <div>
+            <label for="campo_login">Login:</label>
+            <input type="text" id="campo_login" name="login" />
+        </div>
+        <div>
+            <label for="campo_senha">Senha:</label>
+            <input type="password" id="campo_senha" name="senha" />
+        </div>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+{% endblock %}

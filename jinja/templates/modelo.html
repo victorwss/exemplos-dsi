@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block titulo %}{% endblock %}</title>
+        <link rel="icon" type="image/png"
+            href="{{ url_for('static', filename = 'favicon.png') }}" />
+        <link rel="stylesheet" type="text/css"
+            href="{{ url_for('static', filename = 'estilos.css') }}" />
+    </head>
+    <body>
+        <h1>{% block titulo2 %}{% endblock %}</h1>
+        <div class="tudo">
+            {% block conteudo %}{% endblock %}
+        </div>
+        <footer>Todos os direitos reservados... Mentira, é só um exemplo, use a vontade!</footer>
+    </body>
+</html>

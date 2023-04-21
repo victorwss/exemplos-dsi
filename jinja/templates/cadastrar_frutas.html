@@ -1,0 +1,18 @@
+{% extends "modelo.html" %}
+{% block titulo %}Cadastro de frutas{% endblock %}
+{% block titulo2 %}Cadastro de frutas{% endblock %}
+{% block conteudo %}
+    <form method="POST" action="/frutas">
+        <div>
+            <label for="campo_nome">Nome da fruta:</label>
+            <input type="text" id="campo_nome" name="nome" />
+        </div>
+        <div>
+            <label for="campo_cor">Cor da fruta:</label>
+            <input type="text" id="campo_cor" name="cor" />
+        </div>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+{% endblock %}

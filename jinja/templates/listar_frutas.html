@@ -1,0 +1,17 @@
+{% extends "modelo.html" %}
+{% block titulo %}Lista de frutas{% endblock %}
+{% block titulo2 %}Lista de frutas{% endblock %}
+{% block conteudo %}
+    {% if listagem | length == 0 %}
+        <p>Desculpe, não há frutas cadastradas.</p>
+    {% else %}
+        <ul>
+            {% for f in listagem %}
+                <li>Temos {{f.nome}} de cor {{f.cor}}.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+{% endblock %}
